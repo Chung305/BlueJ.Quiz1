@@ -5,7 +5,7 @@ public class StringUtilities {
      * @return `input`
      */
     public String returnInput(String input) {
-        return null;
+        return input;
     }
 
     /**
@@ -14,7 +14,7 @@ public class StringUtilities {
      * @return the concatenation of `baseValue` and `valueToBeAdded`
      */
     public String concatenate(String baseValue, String valueToBeAdded) {
-        return null;
+        return baseValue += valueToBeAdded;
     }
 
     /**
@@ -22,7 +22,11 @@ public class StringUtilities {
      * @return identical string with characters in opposite order
      */
     public String reverse(String valueToBeReversed) {
-        return null;
+        StringBuilder a = new StringBuilder();
+        a.append(valueToBeReversed);
+        a = a.reverse();
+        
+        return a.toString();
     }
 
     /**
@@ -30,7 +34,10 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        return null;
+        System.out.println(word);
+        int middle = word.length()/2;
+        char mid = word.charAt(middle);
+        return mid;
     }
 
     /**
@@ -39,7 +46,18 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        return null;
+        
+        System.out.println(charToRemove);
+        StringBuilder newString = new StringBuilder(value);
+        for(int i = 0; i < value.length(); i++){
+            if(value.charAt(i) == charToRemove){
+                newString.deleteCharAt(i);
+                value = newString.toString();
+            }
+        }
+        
+        return newString.toString();
+        
     }
 
     /**
@@ -47,6 +65,6 @@ public class StringUtilities {
      * @return last `word` in sentence
      */
     public String getLastWord(String sentence) {
-        return null;
+        return sentence.substring(sentence.lastIndexOf(" ")+1);
     }
 }
