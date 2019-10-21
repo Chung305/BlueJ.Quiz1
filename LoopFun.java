@@ -57,10 +57,12 @@ public class LoopFun
                   result[i] = (char)((word.charAt(i) + 13 - (int)'a') % 26 + (int)'a');
                   System.out.println(result[i]);
                 }*/
-                if((char)(word.charAt(i)) > 120 || i == 1){
-                    result[i] = (char) (word.charAt(i) - 26);
+                if((char)(word.charAt(i)) >= 120){
+                    result[i] = (char) (word.charAt(i) - 23);
+                }else{
+                    result[i] = (char) (word.charAt(i) + shiftValue);
                 }
-                result[i] = (char) (word.charAt(i) + shiftValue);
+                
                 
             }
            String destString = new String(result);
